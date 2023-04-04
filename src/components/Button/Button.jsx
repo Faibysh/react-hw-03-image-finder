@@ -1,5 +1,9 @@
+import styles from './Button.module.css';
+
 const Button = ({ onLoadMore }) => (
-  <button onClick={onLoadMore}>Load more</button>
+  <button clasName={styles.more} onClick={onLoadMore}>
+    Load more
+  </button>
 );
 
 export default Button;

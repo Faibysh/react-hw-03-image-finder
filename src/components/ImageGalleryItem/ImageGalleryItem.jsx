@@ -1,5 +1,6 @@
 import Modal from 'components/Modal/Modal';
 import React from 'react';
+import styles from './ImageGalleryItem.module.css';
 
 class ImageGalleryItem extends React.Component {
   state = {
@@ -14,7 +15,7 @@ class ImageGalleryItem extends React.Component {
     const { isModalVisible } = this.state;
     return (
       <>
-        <li className="gallery-item">
+        <li className={styles['gallery-item']}>
           <div className="image-container">
             <img
               src={image.webformatURL}

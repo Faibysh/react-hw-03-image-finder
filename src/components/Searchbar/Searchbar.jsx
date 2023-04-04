@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Searchbar.module.css';
 
 class SearchBar extends React.Component {
   state = {
@@ -7,7 +8,6 @@ class SearchBar extends React.Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(this.state.imageName.trim());
     if (this.state.imageName.trim().length) {
       this.props.onSubmit(this.state.imageName.trim());
       this.setState({ imageName: '' });
@@ -20,11 +20,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <header className="searchbar">
-        <form className="form" onSubmit={this.handleSubmit}>
-          <button type="submit" className="button">
-            <span className="button-label">Search</span>
-          </button>
-
+        <form className={styles['search-form']} onSubmit={this.handleSubmit}>
           <input
             className="input"
             type="text"

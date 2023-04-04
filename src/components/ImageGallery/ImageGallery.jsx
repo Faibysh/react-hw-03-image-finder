@@ -3,6 +3,8 @@ import Loader from 'components/Loader';
 import Button from 'components/Button';
 import React from 'react';
 import { PER_PAGE, getImages } from 'services/api/api';
+import styles from './ImageGallery.module.css';
+
 class ImageGallery extends React.Component {
   state = {
     page: 1,
@@ -63,7 +65,7 @@ class ImageGallery extends React.Component {
         {status === 'pending' && <Loader />}
         {status === 'resolved' && (
           <>
-            <ul className="gallery">
+            <ul className={styles.gallery}>
               {images.length ? (
                 images.map(image => (
                   <ImageGalleryItem key={image.id} image={image} />
