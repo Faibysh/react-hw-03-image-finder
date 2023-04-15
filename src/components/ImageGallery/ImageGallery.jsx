@@ -1,4 +1,4 @@
-import ImageGalleryItem from 'components/ImageGalleryItem';
+import ImageGalleryItem from 'components/ImageGallery/ImageGalleryItem';
 import Loader from 'components/Loader';
 import Button from 'components/Button';
 import React from 'react';
@@ -63,7 +63,7 @@ class ImageGallery extends React.Component {
       <>
         {status === 'rejected' && <div>{error}</div>}
         {status === 'pending' && <Loader />}
-        {status === 'resolved' && (
+        {
           <>
             <ul className={styles.gallery}>
               {images.length ? (
@@ -74,11 +74,9 @@ class ImageGallery extends React.Component {
                 <div>You don't have any photos</div>
               )}
             </ul>
-            {isButtonVisible ? (
-              <Button onLoadMore={this.loadMore} />
-            ) : undefined}
+            {isButtonVisible && <Button onLoadMore={this.loadMore} />}
           </>
-        )}
+        }
       </>
     );
   }
